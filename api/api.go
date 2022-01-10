@@ -79,7 +79,7 @@ type DetailedReportResponse struct {
 
 const (
 	// TogglAPIBaseURL is toggl api base url
-	TogglAPIBaseURL = "https://www.toggl.com/api/v8"
+	TogglAPIBaseURL = "https://api.track.toggl.com/api/v8"
 	// TogglAPIWorkspaces is toggl workspaces api
 	TogglAPIWorkspaces = "workspaces"
 	// TogglReportsAPIBaseURL is toggl reports api
