@@ -1,6 +1,6 @@
-# golang-sample
+# toggl-go
 
-golang sample.
+Toggl Track data to file.
 
 ## Usage
 
@@ -9,7 +9,7 @@ golang sample.
 ```
 
 ```bash
- go run main.go -email "your-mail-address@example.com" -token "___YOUR_TOGGL_API_TOKEN___" -since 2021 | tee output.jsonl
+go run main.go -email "your-mail-address@example.com" -token "___YOUR_TOGGL_API_TOKEN___" -since 2021 | tee output.jsonl
 ```
 
 ## Requirements
