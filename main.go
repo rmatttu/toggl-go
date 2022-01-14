@@ -85,7 +85,7 @@ func main() {
 				panic(err)
 			}
 
-			fmt.Print(os.Stdout, raw)
+			fmt.Fprint(os.Stdout, raw)
 
 			if res.TotalCount < res.PerPage*page {
 				break
