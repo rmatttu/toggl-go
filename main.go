@@ -2,15 +2,15 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
+	"os"
 	"strconv"
 	"strings"
 	"time"
-	"os"
-	"fmt"
 
 	"toggl-go/api"
-	"toggl-go/ayear"
+	"toggl-go/year"
 )
 
 // Args is commandline args
@@ -67,8 +67,8 @@ func main() {
 	nowYear := time.Now().Year()
 
 	mainWorkspace, _ := api.FetchMainWorkspace(conf)
-	for year := sinceYear; year <= nowYear; year++ {
-		target, _ := ayear.New(year)
+	for targetYear := sinceYear; targetYear <= nowYear; targetYear++ {
+		target, _ := year.New(sinceYear)
 		log.Print("target: " + target.String())
 		for page := 1; true; page++ {
 			req := api.DetailedReportRequest{
