@@ -80,12 +80,12 @@ func main() {
 			}
 
 			time.Sleep(time.Duration(*args.Wait) * time.Second)
-			res, raw, err := api.FetchDetailedReport(conf, req)
+			res, responseRaw, err := api.FetchDetailedReport(conf, req)
 			if err != nil {
 				panic(err)
 			}
 
-			fmt.Fprint(os.Stdout, raw)
+			fmt.Fprintf(os.Stdout, "%s\n", responseRaw)
 
 			if res.TotalCount < res.PerPage*page {
 				break
