@@ -12,6 +12,13 @@ Toggl Track data to file.
 go run main.go -email "your-mail-address@example.com" -token "___YOUR_TOGGL_API_TOKEN___" -since 2021 | tee output.jsonl
 ```
 
+### jq sample
+
+```bash
+cat output.jsonl | jq -r '.data[] | [.id, .pid, .tid, .uid, .description, .start, .end, .project, .project_hex_color, dur, (.tags | join("|"))] | @tsv' | sort | uniq | less
+# id pid tid uid description start end project tags
+```
+
 ## Requirements
 
 ## Installation
